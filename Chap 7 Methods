@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int VowTotal = NewMethod();
+
+            Console.WriteLine("Your total number of vowels is: {0}", VowTotal);
+
+            Console.ReadLine();
+            
+        }
+
+        static int NewMethod()
+        {
+            int total = 0;
+            // Build a list of vowels up front:
+            var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+
+            Console.WriteLine("Enter a Sentence");
+            string sentence = Console.ReadLine().ToLower();
+
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                if (vowels.Contains(sentence[i]))
+                {
+                    total++;
+                }
+            }
+            return total;
+
+            
+
+        }
+
+    }
+}
