@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double x = 1;
+            string inputString;
+            double num;
+
+            System.Console.WriteLine("Insert a Number to see its Multiplication up o 10");
+            inputString = System.Console.ReadLine();
+            num = Convert.ToDouble(inputString);
+            while (x <= 10)
+            {
+                if (x <= 10)
+                {
+                    System.Console.WriteLine("{0} * {1} = {2}", num, x, (num * x));
+                    x++;
+                }
+            }
+
+
+        }
+    }
+}
