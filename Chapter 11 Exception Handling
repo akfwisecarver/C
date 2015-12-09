@@ -1,0 +1,85 @@
+FIRST PART:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex2
+{
+    class CreditApp
+    {
+
+
+        
+
+        public static void DoStuff(int score)
+        {
+            if (score >= 300 && score <= 649)
+
+            {
+                Console.WriteLine("You were not approved for the credit, Sorry!");
+            }
+
+            else if (score >= 650 && score <= 850)
+            {
+                Console.WriteLine("You have been approved for the credit!");
+            }
+
+            else
+            {
+                throw new Exception("That is an Invalid Score, Please Try Again");
+            }
+        }
+
+
+
+    }
+
+}
+
+
+SECOND PART:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex2
+{
+    class Program : CreditApp
+    {
+        static void Main(string[] args)
+        {
+
+            string clientName;
+            int score;
+            double number;
+            bool IsGoodScore = false;
+
+            while (!IsGoodScore)
+            {
+                try
+                {
+                    Console.WriteLine("Enter your Name: ");
+                    clientName = Console.ReadLine();
+                    Console.WriteLine("PLease Enter Your Credit Score To See If You Were Approved: ");
+                    score = Convert.ToInt32(Console.ReadLine());
+                    DoStuff(score);
+                    IsGoodScore = true;
+
+
+                }
+                catch (Exception exception)
+                {
+
+                    Console.WriteLine(exception.Message);
+                }
+            }
+
+        }
+    }
+}
