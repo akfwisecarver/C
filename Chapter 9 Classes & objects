@@ -1,0 +1,106 @@
+FIRST PART:
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TaxForm[] Employee = new TaxForm[10];
+            Employee[0] = new TaxForm("445223565", 45000);
+            Employee[1] = new TaxForm("202445223", 32000);
+            Employee[2] = new TaxForm("448998655", 19000);
+            Employee[3] = new TaxForm("154659986", 85000);
+            Employee[4] = new TaxForm("112458899", 22000);
+            Employee[5] = new TaxForm("447548856", 75);
+            Employee[6] = new TaxForm("112103326", 99856);
+            Employee[7] = new TaxForm("448759989", 25000);
+            Employee[8] = new TaxForm("405220000", 44578989);
+            Employee[9] = new TaxForm("775889986", 30000);
+
+
+            for (int x = 0; x < Employee.Length; x++)
+            {
+
+                Console.WriteLine("Employee " + (x + 1) + ":");
+                //Console.WriteLine("Width: " + (Employee[x].GetWidth()));
+                //Console.WriteLine("Length: " + (Employee[x].GetLength()));
+                //Console.WriteLine("Square Feet: " + (Employee[x].GetFloorArea()));
+                //Console.WriteLine("Number of Boxes: " + (Employee[x].GetNumberofBoxes()));
+                Console.WriteLine(Employee[x].ToString());
+                Console.WriteLine();
+
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+SECOND PART:
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex6
+{
+    class TaxForm
+    {
+        private string social;
+        private double income;
+        private double taxes;
+        private double paid;
+
+        public TaxForm(string s, double i)
+        {
+            this.social = s;
+            this.income = i;
+            //this.taxes = t;
+            this.paid = totalPaid(this.income, this.taxes);
+
+
+        }
+
+        private double totalPaid(double i, double t)
+        {
+            if (i < 30000)
+            {
+                t = i * .15;
+
+                
+            }
+            else if (i >= 30000)
+            {
+                t = i * .28;
+
+                
+            }
+            return t;
+        }
+
+
+
+
+        public string ToString()
+        {
+            return String.Format("The Employee's Social Number is {0}, and they have a gross income of {1}, their total for their taxes paid is {2}", this.social, this.income.ToString("C"), this.paid.ToString("C"));
+        }
+
+        
+    }
+}
