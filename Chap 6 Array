@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] ArrayDemo = { 4, 52, 85, 3, 47, 98, 555, 320 };
+
+            double stop = 0;
+            double num;
+            string inputString;
+
+            Console.WriteLine("Insert 1, 2, or 3 to see the list in Regular order, Reverse Order, or a specific area, or type 0 to stop.");
+            inputString = Console.ReadLine();
+            num = Convert.ToDouble(inputString);
+
+
+
+            while (num != 0)
+            {
+                if (num == 1)
+                {
+                    foreach (int i in ArrayDemo)
+                    {
+                        Array.Sort(ArrayDemo);
+                        Console.WriteLine("{0}", i);
+                        
+                    } // end of first foreach
+
+                } //end of first while
+
+                else if (num == 2)
+                {
+                    foreach (int i in ArrayDemo)
+                    {
+                        Array.Reverse(ArrayDemo);
+                        Console.WriteLine("{0}", i);
+
+                    }//end second foreach
+                    
+                } // end second while
+
+                else if (num == 3)
+                {
+                    foreach (int i in ArrayDemo)
+                    {
+                        Console.WriteLine("{0}", i);
+                    }
+                }
+                break;
+
+            } // end of main While
+        }
+    }
+}
