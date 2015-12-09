@@ -1,0 +1,62 @@
+using static System.Console;
+using System.IO;
+
+
+namespace Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string directoryName;
+            string end = "end";
+            string fileName;
+
+
+            Write("Enter a Directory Name >> or {0} to quit. " , end);
+            directoryName = ReadLine();
+
+
+            while (directoryName != end)
+                {
+                
+                if (Directory.Exists(directoryName))
+                {
+                    WriteLine("Directory Exists");
+                    
+
+
+                    do
+                    {
+                        WriteLine("Enter a File name, or {0} to quit.", end);
+                        fileName = ReadLine();
+                        if (fileName == "end")
+                        {
+                            break;
+                        }
+                        if (File.Exists((directoryName + "\\" + fileName)))
+                        {
+                            WriteLine("File Does Exist.");
+                            WriteLine("File was Created " + File.GetCreationTime(fileName));
+                            WriteLine("File was last accessed " + File.GetLastAccessTime(fileName));
+                            WriteLine("File was last written to " + File.GetLastWriteTime(fileName));
+                            WriteLine();
+                        }
+                        else
+                        {
+                            WriteLine("File Does Not Exist.");
+                        }
+                    }while (fileName != end) ;
+                    if (fileName == "end")
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    WriteLine("Directory Does Not Exist");
+                }
+            }
+        }
+    }
+}
