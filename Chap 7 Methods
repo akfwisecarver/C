@@ -1,3 +1,8 @@
+********* This code sample allows you to take and put a sentence or a lot of random words, and afte rpressing enter
+it counts all the vowels that are within that string. *********
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
