@@ -1,3 +1,6 @@
+****** This is a simple code, it just prints out a simple array with already preset numbers. *****
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
