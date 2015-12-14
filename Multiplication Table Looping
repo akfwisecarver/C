@@ -1,3 +1,8 @@
+******** This code right here, allows you to input a number between 1 - 10 and it prints out a a table of multiplication factors up to a power of 10.
+
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
