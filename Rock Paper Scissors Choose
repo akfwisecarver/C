@@ -1,3 +1,10 @@
+***** This is an example of a Command Line Rock Paper Scissors game. You input a choice: Rock, Paper, Scissor, and it then takes and randomly
+generates a response from the computer, and decides if you win or lose. **********
+
+
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
