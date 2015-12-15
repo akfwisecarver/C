@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstInt = 25;
+            int middleInt = 447;
+            int lastInt = 887586;
+
+            var Whatever = "whatever";
+            var WhoKnows ="WhoKnows";
+            var WonderWhy = "WonderWhy";
+            var WhatchaThink = "WhatchaThink";
+
+
+            Console.WriteLine("In Main firstInt is {0}", firstInt);
+            Console.WriteLine("In Main middleInt is {0}", middleInt);
+            Console.WriteLine("In Main lastInt is {0}", lastInt);
+
+
+            Console.WriteLine("\n");
+
+            Second(ref firstInt, ref lastInt);
+
+
+            Console.WriteLine("In Main firstInt is {0}", firstInt);
+            Console.WriteLine("In main midleInt is {0}", middleInt);
+            Console.WriteLine("In Main lastInt is {0}", lastInt);
+
+            Console.WriteLine("\n");
+
+            Console.WriteLine("{0}", Whatever);
+            Console.WriteLine("{0}", WhoKnows);
+            Console.WriteLine("{0}", WonderWhy);
+            Console.WriteLine("{0}", WhatchaThink);
+
+            Console.WriteLine("\n");
+
+            Words(ref Whatever, ref WhoKnows, ref WonderWhy, ref WhatchaThink);
+
+
+            Console.WriteLine("{0}", Whatever);
+            Console.WriteLine("{0}", WhoKnows);
+            Console.WriteLine("{0}", WonderWhy);
+            Console.WriteLine("{0}", WhatchaThink);
+        }
+
+          private static void Second(ref int First, ref int Last)
+        {
+            First = 887586;
+            Last = 25;
+        }
+
+        private static void Words(ref string Word1, ref string Word2, ref string Word3, ref string word4)
+        {
+            Word1 = "WhatchaThink";
+            Word2 = "WonderWhy";
+            Word3 = "WhoKnows";
+            word4 = "Whatever";
+        }
+    }
+}
